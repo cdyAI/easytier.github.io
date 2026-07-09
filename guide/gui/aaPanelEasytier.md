@@ -90,7 +90,7 @@ bash /www/server/panel/plugin/easytier_manager/install.sh install
 
 1. 在 aaPanel 插件商店中卸载 EasyTier Manager
 2. 或手动执行：`bash /www/server/panel/plugin/easytier_manager/install.sh uninstall`
-3. 如需彻底清理，手动删除 `/opt/easytier` 目录
+3. 如需彻底清理，请手动删除 `/opt/easytier` 目录
 
 ## 开源协议
 
