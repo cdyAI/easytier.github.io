@@ -1,85 +1,37 @@
-# **EasyTier Manager**
-
-### aaPanel / 宝塔面板 组网管理插件
-
-<p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="Version">
-  <img src="https://img.shields.io/badge/platform-Linux-lightgrey?style=flat-square" alt="Platform">
-  <img src="https://img.shields.io/badge/panel-aaPanel%20%7C%20宝塔-00c58e?style=flat-square" alt="Panel">
-  <img src="https://img.shields.io/badge/license-MIT-orange?style=flat-square" alt="License">
-</p>
-
-
-<p align="center">
-  <a href="https://gitee.com/yalicdy/a-panel-easytier">Gitee</a> •
-  <a href="https://github.com/EasyTier/EasyTier">EasyTier</a> •
-  <a href="#-功能特性">功能特性</a> •
-  <a href="#-快速开始">快速开始</a> •
-  <a href="#-使用说明">使用说明</a>
-</p>
-
----
-
-### 在面板里管理组网，从此告别命令行
+# aaPanel / 宝塔面板 EasyTier 插件
 
 EasyTier Manager 是一款专为 [aaPanel](https://www.aapanel.com/) / 宝塔面板 打造的插件，让您可以在熟悉的面板界面中，一键完成 [EasyTier](https://github.com/EasyTier/EasyTier) 组网工具的下载、配置、启停与监控。
 
-**🖥️ 图形化操作** - 无需记忆命令，所有操作在面板中点击完成
+- **图形化操作** - 无需记忆命令，所有操作在面板中点击完成
+- **服务端组网** - 让您的服务器轻松加入 EasyTier 虚拟网络
+- **配置编辑** - 在面板中直接编辑 `config.toml`，保存即生效
+- **日志查看** - 实时查看 EasyTier 运行日志，快速定位问题
 
-**🌐 服务端组网** - 让您的服务器轻松加入 EasyTier 虚拟网络
+## 功能特性
 
-</div>
+- **一键下载安装** - 自动从 GitHub 下载 EasyTier 并解压部署到 `/opt/easytier`
+- **配置管理** - 在面板中直接编辑 `config.toml` 配置文件，可视化保存
+- **服务控制** - 一键启动 / 停止 EasyTier 服务，以 nohup 方式后台运行
+- **日志查看** - 实时查看 EasyTier 运行日志（最近 100 行）
+- **状态监控** - 随时查看 EasyTier 运行状态
+- **自动依赖检测** - 安装脚本自动检测并安装 `wget`、`unzip`
+- **生命周期管理** - 提供完整的安装 / 卸载脚本，干净利落
 
----
-
-
-
-### 配置编辑
-
-
-在面板中直接编辑 `config.toml`，保存即生效
-
----
-
-### 日志查看
-
-
-
-实时查看 EasyTier 运行日志，快速定位问题
-
-</div>
-
----
-
-## ✨ 功能特性
-
-### 核心功能
-
-- **📦 一键下载安装** - 自动从 GitHub 下载 EasyTier 并解压部署到 `/opt/easytier`
-- **📝 配置管理** - 在面板中直接编辑 `config.toml` 配置文件，可视化保存
-- **🎛️ 服务控制** - 一键启动 / 停止 EasyTier 服务，以 nohup 方式后台运行
-- **📋 日志查看** - 实时查看 EasyTier 运行日志（最近 100 行）
-- **📊 状态监控** - 随时查看 EasyTier 运行状态
-- **🔧 自动依赖检测** - 安装脚本自动检测并安装 `wget`、`unzip`
-- **♻️ 生命周期管理** - 提供完整的安装 / 卸载脚本，干净利落
-
----
-
-## 🚀 快速开始
-
-### 系统要求
+## 系统要求
 
 - **操作系统**: Linux (x86_64)
 - **面板环境**: aaPanel / 宝塔 Linux 面板
 - **系统依赖**: `wget`、`unzip`（安装脚本会自动检测并安装）
 
-### 安装方式一：通过插件目录安装（推荐）
+## 安装方式
+
+### 方式一：通过插件目录安装（推荐）
 
 1. 在 `面板地址/soft/other` 导入插件，上传[发行版](https://gitee.com/yalicdy/aa-panel-easytier/releases/download/%E6%AD%A3%E5%BC%8F%E7%89%88/easytier_bt.zip)
 2. 在插件商店中查看已安装的插件列表，找到 **EasyTier Manager**
 3. 点击安装即可
 
-### 安装方式二：手动安装
+### 方式二：手动安装
 
 ```bash
 # 1. 创建插件目录
@@ -96,9 +48,7 @@ cp config.toml              /www/server/panel/plugin/easytier_manager/
 bash /www/server/panel/plugin/easytier_manager/install.sh install
 ```
 
----
-
-## 📖 使用说明
+## 使用说明
 
 安装完成后，在 aaPanel 面板左侧菜单栏中找到 **EasyTier 管理器**，即可进入管理页面。
 
@@ -109,29 +59,19 @@ bash /www/server/panel/plugin/easytier_manager/install.sh install
 3. **启动服务** - 点击「启动服务」按钮，EasyTier 将以 nohup 方式在后台运行
 4. **查看日志** - 点击「刷新日志」查看运行状态
 
-### 配置文件说明
+### 配置文件示例
 
-```toml
-# EasyTier 默认配置示例
-[network_identity]
-network_name = "default"
-network_secret = "default"
+见easytier官方文档。
 
-[ipv4]
-addr = "10.144.10"
-```
+更多配置项请参考 [配置文件](/guide/network/config-file) 和 [完整配置选项](/guide/network/configurations)。
 
-更多配置项请参考 [EasyTier 官方文档](https://github.com/EasyTier/EasyTier)。
-
----
-
-## 🗂️ 目录结构
+## 目录结构
 
 ```
 /www/server/panel/plugin/easytier_manager/
 ├── easytier_manager_main.py   # 插件后端逻辑
 ├── index.html                 # 前端管理页面
-├── info.json                # 插件信息
+├── info.json                  # 插件信息
 ├── install.sh                 # 安装/卸载脚本
 └── config.toml                # 默认配置文件
 ```
@@ -144,60 +84,20 @@ addr = "10.144.10"
 | `install.sh` | 安装/卸载脚本，用于插件生命周期管理 |
 | `config.toml` | EasyTier 默认配置文件模板 |
 
----
+## 常见问题
 
-## ❓ 常见问题
 
-### 下载安装失败？
-
-- 检查服务器能否访问 GitHub，必要时配置代理或更换下载源
-- 确认 `wget`、`unzip` 已正确安装
-- 查看安装日志排查具体错误
-
-### 服务启动后无法组网？
-
-- 检查 `config.toml` 中的 `network_name` 与 `network_secret` 是否与其他节点一致
-- 确认服务器防火墙已放行 EasyTier 所需端口
-- 通过「刷新日志」查看运行状态
-
-### 配置保存后没有生效？
-
-- 修改配置后需要重新启动服务才能生效
-- 先点击「停止服务」，再点击「启动服务」
-
-### 如何彻底卸载？
 
 1. 在 aaPanel 插件商店中卸载 EasyTier Manager
 2. 或手动执行：`bash /www/server/panel/plugin/easytier_manager/install.sh uninstall`
 3. 如需彻底清理，手动删除 `/opt/easytier` 目录
 
----
-
-## 📜 开源协议
+## 开源协议
 
 本项目采用 **MIT** 协议开源，欢迎自由使用、修改和分发。
 
----
-
-## 🙏 致谢
-
-感谢以下开源项目：
-
-- [EasyTier](https://github.com/EasyTier/EasyTier) - 简单、安全、去中心化的虚拟组网方案
-- [aaPanel](https://www.aapanel.com/) - 简单好用的 Linux 服务器运维面板
-
----
-
-## 🔗 相关链接
+## 相关链接
 
 - [EasyTier GitHub](https://github.com/EasyTier/EasyTier)
 - [aaPanel 官网](https://www.aapanel.com/)
 - [插件仓库 Gitee](https://gitee.com/yalicdy/aa-panel-easytier)
-
----
-
-<div align="center">
-
-### ⭐ 如果这个插件对你有帮助，请给我一个 Star！⭐
-
-**在面板里轻松组网，让服务器互联更简单！** 🌐✨
